@@ -1,4 +1,3 @@
-# eksClusterSetup
 Pre-Requisites:
  
 make sure to install and configure Kubectl, awscli
@@ -48,5 +47,6 @@ From second time onwards:
 $ kubectl apply -f aws-auth-cm.yaml 
 
 
-##Worker Node Stack with more options##
+## Worker Nodes Creation with more option##
+
 $aws cloudformation create-stack --stack-name nodeCluster --template-body file://node.yml --parameters   ParameterKey=ClusterName,ParameterValue=EKScluster  ParameterKey=ClusterControlPlaneSecurityGroup,ParameterValue=sg-07ee71ebad4e3db21  ParameterKey=KeyName,ParameterValue=eks_key ParameterKey=NodeAutoScalingGroupDesiredCapacity,ParameterValue=1 ParameterKey=NodeAutoScalingGroupMaxSize,ParameterValue=1 ParameterKey=NodeAutoScalingGroupMinSize,ParameterValue=1 ParameterKey=NodeGroupName,ParameterValue=NodeGroup ParameterKey=NodeInstanceType,ParameterValue=t2.micro ParameterKey=Subnets,ParameterValue="subnet-08c41497171e92daf\,subnet-00d7751b4e72bb55c\,subnet-03e2725fccdad5bb2" ParameterKey=VpcId,ParameterValue=vpc-0a196673b1630615a --capabilities CAPABILITY_IAM
