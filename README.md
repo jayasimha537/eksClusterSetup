@@ -4,12 +4,17 @@ make sure to install and configure Kubectl, awscli
 
 
 $ aws --version
+
 aws-cli/1.16.253 Python/3.7.3 Linux/5.0.0-29-generic botocore/1.12.243
 
 $ aws configure
+
 AWS Access Key ID [None]: xyz
+
 AWS Secret Access Key [None]: xyxz
+
 Default region name [None]: us-east-1
+
 Default output format [None]: json
 
 
@@ -25,6 +30,7 @@ $ aws eks --region region_code update-kubeconfig --name eks_cluster_name
 
 Example:
 $ aws eks --region us-east-1 update-kubeconfig --name EKScluster
+
 Added new context arn:aws:eks:us-east-1:1234:cluster/stageCluster to /home/jay/.kube/config
 
 ########### Worker Nodes Creation ##############
@@ -40,10 +46,12 @@ update the "rolearn" value in aws-auth-cm.yaml file and run below command.
 
 Frirst time:
 $ kubectl create -f aws-auth-cm.yaml 
+
 Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
 configmap/aws-auth configured 
 
 From second time onwards:
+
 $ kubectl apply -f aws-auth-cm.yaml 
 
 
