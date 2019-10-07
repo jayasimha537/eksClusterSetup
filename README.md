@@ -24,7 +24,7 @@ $ chmod +x ./kubectl
 $ mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
 $ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
 $ kubectl version --short --client
-# ```
+```
 
 **EKS Cluster Creation**
 Launch EKS cluster with new VPC: ( edit the file to change CIDR values)
@@ -45,7 +45,8 @@ $ aws eks --region region_code update-kubeconfig --name eks_cluster_name
 Example:
 ```bash
 $ aws eks --region us-east-1 update-kubeconfig --name EKScluster
-Added new context arn:aws:eks:us-east-1:1234:cluster/stageCluster to /home/jay/.kube/config```
+Added new context arn:aws:eks:us-east-1:1234:cluster/stageCluster to /home/jay/.kube/config 
+```
 
 ** Worker Nodes Creation**
 
